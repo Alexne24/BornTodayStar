@@ -1,0 +1,10 @@
+db.sqlite3
+media/
+git add .
+git commit -m "Initial commit"
+git log --oneline → выбираем коммит.
+git checkout ХЭШ → временно смотрим коммит.
+git reset --hard ХЭШ → перезаписываем историю (осторожно!).
+git reset --soft ХЭШ → файлы останутся, но версия проекта вернется назад.
+
+
