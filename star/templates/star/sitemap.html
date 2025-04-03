@@ -1,0 +1,35 @@
+<!-- star/templates/star/sitemap.html -->
+{% extends 'star/base.html' %}
+
+{% block title %}Карта сайта{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4">Карта сайта</h1>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Список знаменитостей</h2>
+
+            {% if stars %}
+                <div class="list-group">
+                    {% for star in stars %}
+                        <a href="{{ star.get_absolute_url }}" class="list-group-item list-group-item-action">
+                            {{ star.name }}
+                            {% if star.birth_date %}
+                                (род. {{ star.birth_date|date:"Y" }})
+                            {% endif %}
+                        </a>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="alert alert-info">Знаменитостей не найдено.</div>
+            {% endif %}
+        </div>
+
+        <div class="col-md-4">
+            <!-- Дополнительные блоки, если нужны -->
+        </div>
+    </div>
+</div>
+{% endblock %}
