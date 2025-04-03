@@ -1,9 +1,47 @@
 {% extends 'star/base.html' %}
-{% block title %}{{ title }} - Borntoday.ru{% endblock %}
+
+{% block title %}О сайте{% endblock %}
 
 {% block content %}
-<h3>О сайте</h3>
-<p>
-{{ description  }}
-<p>
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <h1 class="mb-4">{{ title }}</h1>
+            <p class="mb-4">{{ description }}</p>
+
+            <!-- Упрощенный блок статистики -->
+            <div class="mb-5">
+                <h2 class="h4 mb-3">Статистика сайта</h2>
+                <div class="row">
+                    <div class="col-6 col-md-3 mb-3">
+                        <div class="p-3 border rounded">
+                            <div class="h4 mb-1">{{ stats.stars }}</div>
+                            <div class="text-muted small">Знаменитостей</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-3">
+                        <div class="p-3 border rounded">
+                            <div class="h4 mb-1">{{ stats.countries }}</div>
+                            <div class="text-muted small">Стран</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-3">
+                        <div class="p-3 border rounded">
+                            <div class="h4 mb-1">{{ stats.categories }}</div>
+                            <div class="text-muted small">Категорий</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-3">
+                        <div class="p-3 border rounded">
+                            <div class="h4 mb-1">{{ stats.today_birthdays }}</div>
+                            <div class="text-muted small">Именинников сегодня</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Конец блока статистики -->
+
+        </div>
+    </div>
+</div>
 {% endblock %}
